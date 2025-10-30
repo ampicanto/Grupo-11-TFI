@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ReCAPTCHA from "react-google-recaptcha";
 import "../css/style.css";
-import logo from "../assets/icono.PNG";
+import logo from "../assets/LOGO BLANCO.png";
 
 export const Login = () => {
   const [formData, setFormData] = useState({ email: "", password: "" });
