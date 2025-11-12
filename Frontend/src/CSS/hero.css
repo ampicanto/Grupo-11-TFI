@@ -1,0 +1,200 @@
+body{
+    background: linear-gradient(135deg, #0099ff, #0055cc);
+}
+
+h1 {   
+    font-family: "Cedarville Cursive", cursive; 
+    margin-left: 1rem;
+    font-weight: 600; 
+    font-style: normal; 
+    font-size: 3.8rem; 
+    color: #ffffff
+    
+} 
+
+h2{ 
+    margin-left: 2rem;
+    font-size: 5rem; 
+    color: #ffffff; 
+    margin-bottom: 1.5rem; 
+    margin-top: 5%;
+    line-height: 1.2; 
+}
+
+h3 { 
+    font-size: 5rem;
+    color: #ffffff; 
+    margin-bottom: 1rem; 
+} /* Layout horizontal: imagen a la derecha, textos a la izquierda */ 
+
+.section { 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    padding: 2rem; 
+    gap: 2rem; 
+    flex-wrap: wrap; 
+
+}
+
+.imagen img { 
+    width: 400px; 
+    max-width: 100%; 
+    border-radius: 10px; 
+    margin-right: 40px;
+    animation: fadeIn 1.2s ease-in-out; } /* Contenedor de textos */ 
+    section > div:not(.imagen) { 
+        flex: 1; animation: slideUp 1s ease-out; 
+    }
+
+@keyframes slideUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } } @keyframes fadeIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+
+/* Animación con efecto al hacer scroll */ 
+section { 
+    opacity: 0; 
+    transform: translateY(40px); 
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out; } 
+    section.visible { opacity: 1; transform: translateY(0); 
+}
+/* Contenedor superior: h1, h2 + imagen alineados horizontalmente */
+.hero-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+
+/* Textos del encabezado */
+.textos {
+  flex: 1;
+}
+
+/* Imagen a la derecha */
+.imagen {
+    margin-top: 60px;
+  flex-shrink: 0;
+}
+
+/* Contenedor inferior: texto descriptivo */
+.hero-bottom {
+  animation: slideUp 1s ease-out;
+}
+
+/* Mantiene animación general */
+section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-bottom {
+  padding: 2rem;
+  text-align: center;
+  color: white;
+}
+
+.hero-bottom h2,
+.hero-bottom h3 {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s ease forwards;
+}
+
+/* Animación escalonada */
+.hero-bottom h2:nth-of-type(1) {
+  animation-delay: 0.2s;
+}
+.hero-bottom h3:nth-of-type(1) {
+  animation-delay: 0.4s;
+}
+.hero-bottom h3:nth-of-type(2) {
+  animation-delay: 0.6s;
+}
+.hero-bottom h2:nth-of-type(2) {
+  animation-delay: 0.8s;
+}
+
+/* Definición de la animación */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-bottom {
+  padding: 3rem;
+  text-align: center;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+}
+
+.hero-bottom h2,
+.hero-bottom h3 {
+  opacity: 0;
+  transform: scale(0.95) translateY(20px);
+  animation: fadeScaleIn 1s ease-out forwards;
+}
+
+/* Animación escalonada */
+.hero-bottom h2:nth-of-type(1) {
+  animation-delay: 0.2s;
+}
+.hero-bottom h3:nth-of-type(1) {
+  animation-delay: 0.4s;
+}
+.hero-bottom h3:nth-of-type(2) {
+  animation-delay: 0.6s;
+}
+.hero-bottom h2:nth-of-type(2) {
+  animation-delay: 0.8s;
+}
+
+/* Definición de la animación */
+@keyframes fadeScaleIn {
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+.hero-bottom h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  letter-spacing: 0.5px;
+}
+
+.hero-bottom h3 {
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  letter-spacing: 0.3px;
+}
+.hero-bottom {
+  padding: 2rem;
+  text-align: center;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+}
+
+.hero-bottom h2,
+.hero-bottom h3 {
+  opacity: 0;
+  transform: translateY(30px) scale(0.95);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Clase que se activa al hacer scroll */
+.hero-bottom .visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
