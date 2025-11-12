@@ -1,0 +1,118 @@
+/*
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #111;
+}
+
+.login-container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0099ff, #0055cc);
+}
+
+.login-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  padding: 40px;
+  border-radius: 20px;
+  width: 320px;
+  text-align: center;
+  color: #fff;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3);
+  animation: fadeInUp 0.8s ease;
+}
+
+.login-logo {
+  width: 80px;
+  margin-bottom: 10px;
+  background: #fff;
+  padding: 10px;
+  border-radius: 12px;
+}
+
+.login-card h2 {
+  font-size: 1.6rem;
+  margin: 10px 0;
+}
+
+.login-card p {
+  font-size: 0.9rem;
+  color: #ddd;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+}
+
+label {
+  font-size: 0.9rem;
+  text-align: left;
+  margin-bottom: 5px;
+}
+
+input {
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-size: 0.9rem;
+}
+
+input::placeholder {
+  color: #888;
+}
+
+.captcha-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+button {
+  background: linear-gradient(90deg, #0072ff, #00c6ff);
+  border: none;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background: linear-gradient(90deg, #0052cc, #00aaff);
+}
+
+.register-text {
+  margin-top: 15px;
+  font-size: 0.85rem;
+}
+
+.register-text a {
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.register-text a:hover {
+  text-decoration: underline;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+

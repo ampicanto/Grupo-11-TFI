@@ -1,30 +1,29 @@
 // frontend/src/App.jsx (MODIFICADO)
-import { Routes, Route } from "react-router-dom"; // Importamos Routes y Route
-import { Login } from "./components/Login";
-import { Home } from "./components/Home"; // Importamos la nueva Home
-import { Registro } from "./components/Registro";
-import { AlumnosList } from "./components/AlumnosList";
-import { AlumnoForm } from "./components/AlumnoForm";
+import { Routes, Route } from "react-router-dom";
+import Login from "./Pages/Login";
+import { Home } from "./Pages/Home";
+import { Registro } from "./Pages/Registro";
+import { AlumnosList } from "./components/CRUDALUMNO/AlumnosList";
+import { AlumnoForm } from "./components/CRUDALUMNO/AlumnoForm";
+import {Navbar} from "./components/Navbar.jsx";
+import {Hero} from "./components/Hero.jsx";
 
 function App() {
   return (
-    <Routes>
-      {/* Ruta raíz: muestra el componente Login */}
-      <Route path="/" element={<Login />} /> 
-      
-      <Route path="/registro" element={<Registro />} /> {/* ⬅️ Nueva Ruta */}
-
-      <Route path="/alumnos" element={<AlumnosList />} />
-      
-      <Route path="/alumnos/crear" element={<AlumnoForm />} />
-      <Route path="/alumnos/editar/:id" element={<AlumnoForm />} />
-      
-      {/* Ruta /home: muestra el componente Home (después del login) */}
-      <Route path="/home" element={<Home />} /> 
-      
-      {/* Podrías añadir otras rutas como /alumnos, /profesores aquí */}
-      <Route path="*" element={<h1>404 - Página no encontrada</h1>} />
-    </Routes>
+    <div>
+      <Navbar />
+      <Routes>
+        <route path="/" element={<Hero />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/registro" element={<Registro />} />
+        <Route path="/alumnos" element={<AlumnosList />} />
+        <Route path="/alumnos/crear" element={<AlumnoForm />} />
+        <Route path="/alumnos/editar/:id" element={<AlumnoForm />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="*" element={<h1>404 - Página no encontrada</h1>} />
+      </Routes>
+    </div>
   );
 }
+
 export default App;
