@@ -1,13 +1,13 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import ReCAPTCHA from "react-google-recaptcha";
-import "./style.css";
-import logo from "../assets/icono.PNG";
+import "../css/style.css";
+import logo from "../assets/LOGO BLANCO.png";
 
 export const Login = () => {
   const [formData, setFormData] = useState({ email: "", password: "" });
-
-  // Estado para verificar si el captcha es válido
   const [captchaValido, setCaptchaValido] = useState(false);
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -24,6 +24,10 @@ export const Login = () => {
       return;
     }
     console.log("Datos enviados:", formData);
+  };
+
+  const handleRegistroClick = () => {
+    navigate('/registro');
   };
 
   return (
@@ -53,12 +57,10 @@ export const Login = () => {
             onChange={handleChange}
             required
           />
-          {/*  ReCAPTCHA integration */}
 
           <div className="captcha-container">
             <ReCAPTCHA
-              sitekey="6LcIcPErAAAAAEItNKo6udqJR4WpWmoa8xiBt1mD"
-
+              sitekey="6LcIcPErAAAAAEItNKo6udqJR4WpWmoa8xiBt1mD" 
               onChange={handleCaptchaChange}
             />
           </div>
@@ -67,7 +69,18 @@ export const Login = () => {
         </form>
 
         <p className="register-text">
-          ¿No tenés cuenta? <a href="#">Registrate</a>
+          ¿No tenés cuenta? <button 
+            onClick={handleRegistroClick} 
+            style={{ 
+              background: 'none', 
+              border: 'none', 
+              padding: 0, 
+              color: '#f7f7f7ff', 
+              textDecoration: 'underline', 
+              cursor: 'pointer' 
+            }}>
+            Registrate
+          </button>
         </p>
       </div>
     </div>
